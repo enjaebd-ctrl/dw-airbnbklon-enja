@@ -12,7 +12,7 @@ fetch("data/destinations.json")
         <h2>${destination.title}</h2>
         <p>${destination.destination}</p>
 
-        <a href="destination.html?id=${destination.id}">
+        <a href="data.html?id=${destination.id}">
           MORE
         </a>
       `;
