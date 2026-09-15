@@ -1,31 +1,23 @@
 fetch("data/destinations.json")
   .then(response => response.json())
   .then(data => {
-    console.log(data);
-
     const container = document.querySelector("#destinations");
 
-    data.forEach(destination => {
+    data.destinations.forEach(destination => {
       const article = document.createElement("article");
 
       article.innerHTML = `
         <img src="img/${destination.image}" alt="${destination.title}">
 
-        <div class="card-info">
-          <h2>${destination.title}</h2>
-          <p>${destination.location}</p>
+        <h2>${destination.title}</h2>
+        <p>${destination.destination}</p>
 
-          <a href="destination.html?id=${destination.id}">
-            MORE
-          </a>
-        </div>
+        <a href="destination.html?id=${destination.id}">
+          MORE
+        </a>
       `;
 
       container.appendChild(article);
     });
   })
-  .catch(error => {
-    console.error("Der skete en fejl:", error);
-  });
-
-  
+  .catch(error => console.error(error));
