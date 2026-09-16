@@ -7,10 +7,9 @@ fetch("data/destinations.json")
       const article = document.createElement("article");
 
       article.innerHTML = `
+      <div class="dis__image-wrapper">
         <img src="img/${destination.image}" alt="${destination.title}">
-
-        <h2>${destination.title}</h2>
-        <p>${destination.destination}</p>
+</div>
 
         <a href="data.html?id=${destination.id}">
           MORE
