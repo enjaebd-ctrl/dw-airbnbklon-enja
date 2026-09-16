@@ -17,6 +17,10 @@ fetch(`data/${id}.json`)
                     alt="${data.title}"
                 >
 
+                  <button class="detail-favorite">
+                        ♥ <span>FAVORIT</span>
+                    </button>
+                    
                 <div class="destination-info">
 
                     <p class="destination-country">
