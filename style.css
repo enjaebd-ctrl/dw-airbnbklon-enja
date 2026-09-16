@@ -131,102 +131,157 @@ overflow: hidden;
 ========================= */
 
 .destination-page {
+    width: 96%;
     max-width: 1100px;
-    margin: 40px auto;
+    min-height: 600px;
+
+    margin: 20px auto;
+
+    background-color: white;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+
+    gap: 0;
 }
 
 
-/* BILLEDE + FAVORIT */
+/* 
+   BILLEDE
+ */
 
 .destination-image-container {
     position: relative;
+
+    height: 550px;
+    background-color: #c6c6c6;
+
+    overflow: hidden;
 }
 
 .destination-image {
     display: block;
+
     width: 100%;
-    height: 550px;
+    height: 100%;
+
     object-fit: cover;
 }
 
 
-/* FAVORIT */
+/* 
+   FAVORIT
+ */
 
 .detail-favorite {
     position: absolute;
-    top: 12px;
-    right: 12px;
+
+    top: 14px;
+    right: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
 
     border: none;
     background: transparent;
 
-    color: black;
-
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    font-size: 18px;
+    color: #000;
 
     cursor: pointer;
 }
 
-.detail-favorite span {
+.detail-favorite .heart {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.detail-favorite span:last-child {
     font-size: 8px;
     font-weight: bold;
 }
 
 
-/* TEKST */
+/* 
+   TEKST
+ */
 
 .destination-info {
-    padding: 30px 20px;
+    padding: 105px 45px 40px;
+
+    display: flex;
+    flex-direction: column;
 }
+
+
+/* LAND / BY */
 
 .destination-country {
     margin: 0 0 12px;
 
-    font-size: 9px;
+    text-align: center;
+
+    font-size: 10px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
+
+
+/* TITEL */
 
 .destination-info h1 {
-    margin: 0 0 10px;
+    margin: 0 0 18px;
 
-    text-align: left;
-    font-size: 22px;
-    font-weight: normal;
+    text-align: center;
+
+    font-size: 21px;
+    font-weight: 400;
 }
+
+
+/* UNDERTEKST */
 
 .destination-info h2 {
-    margin: 0 0 25px;
+    margin: 0 auto 30px;
 
-    font-size: 11px;
-    font-weight: normal;
+    max-width: 250px;
+
+    text-align: center;
+
+    font-size: 10px;
+    line-height: 1.4;
+    font-weight: 400;
 }
+
+
+/* BESKRIVELSE */
 
 .description {
-    font-size: 11px;
-    line-height: 1.5;
+    margin: 0;
+
+    font-size: 10px;
+    line-height: 1.4;
 }
 
 
-/* FACILITETER */
+/* 
+   FACILITETER
+ */
 
 .destination-info h3 {
-    margin-top: 25px;
-    font-size: 13px;
+    margin: 20px 0 7px;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .destination-info ul {
-    padding-left: 18px;
+    margin: 0;
+    padding-left: 17px;
 }
 
 .destination-info li {
-    margin-bottom: 7px;
-    font-size: 11px;
+    margin-bottom: 5px;
+
+    font-size: 10px;
 }

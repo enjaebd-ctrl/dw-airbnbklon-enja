@@ -8,19 +8,25 @@ fetch(`data/${id}.json`)
         const destination = document.querySelector("#destination");
 
         destination.innerHTML = `
-            
+
             <div class="destination-page">
 
-                <img 
-                    class="destination-image"
-                    src="img/${data.image}" 
-                    alt="${data.title}"
-                >
+                <div class="destination-image-container">
 
-                  <button class="detail-favorite">
-                        ♥ <span>FAVORIT</span>
+                    <img
+                        class="destination-image"
+                        src="img/${data.image}"
+                        alt="${data.title}"
+                    >
+
+                    <button class="detail-favorite">
+                        <span class="heart">♥</span>
+                        <span>FAVORIT</span>
                     </button>
-                    
+
+                </div>
+
+
                 <div class="destination-info">
 
                     <p class="destination-country">
@@ -35,15 +41,13 @@ fetch(`data/${id}.json`)
                         ${data.text}
                     </p>
 
-                    <h3>Facilities</h3>
+                    <h3>Faciliteter</h3>
 
                     <ul>
                         ${data.facilities.map(facility => `
                             <li>${facility}</li>
                         `).join("")}
                     </ul>
-
-                
 
                 </div>
 
