@@ -7,6 +7,12 @@ fetch(`data/${id}.json`)
 
         const destination = document.querySelector("#destination");
 
+        // Hent eksisterende favoritter
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        // Tjek om denne destination allerede er favorit
+        const isFavorite = favorites.includes(id);
+
         destination.innerHTML = `
 
             <div class="destination-page">
@@ -19,7 +25,7 @@ fetch(`data/${id}.json`)
                         alt="${data.title}"
                     >
 
-                    <button class="detail-favorite">
+                    <button class="detail-favorite ${isFavorite ? "active" : ""}">
                         <span class="heart">♥</span>
                         <span>FAVORIT</span>
                     </button>
@@ -53,6 +59,30 @@ fetch(`data/${id}.json`)
 
             </div>
         `;
+
+        // Find favorit-knappen
+        const favoriteButton = document.querySelector(".detail-favorite");
+
+        favoriteButton.addEventListener("click", () => {
+
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            if (favorites.includes(id)) {
+                // Fjern destinationen fra favoritter
+                favorites = favorites.filter(favoriteId => favoriteId !== id);
+
+                favoriteButton.classList.remove("active");
+            } else {
+                // Tilføj destinationen til favoritter
+                favorites.push(id);
+
+                favoriteButton.classList.add("active");
+            }
+
+            // Gem ændringen
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+        });
+
     })
     .catch(error => {
         console.error("Der skete en fejl:", error);
